@@ -1,5 +1,7 @@
-# Get the current username
-$CurrentUser = [Environment]::UserName
+param(
+    [string]$NewName = "Default Name"
+)
 
-# Change the username to "New Name"
-Rename-LocalUser -Name $CurrentUser -NewName "New Name" -ErrorAction SilentlyContinue
+# Get the current username and rename
+$CurrentUser = [Environment]::UserName
+Rename-LocalUser -Name $CurrentUser -NewName $NewName -ErrorAction SilentlyContinue
